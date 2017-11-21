@@ -8,7 +8,8 @@ namespace emNeuralNet
         {
             SIGMOID = 0,
             TANH = 1,
-            STEP = 2
+            STEP = 2,
+            IDENTITY = 3
         }
 
         public static double Activate(Activation a, double input)
@@ -27,6 +28,10 @@ namespace emNeuralNet
 
                 case Activation.STEP:
                     retVal = Step(input);
+                    break;
+
+                case Activation.IDENTITY:
+                    retVal = input;
                     break;
             }
 
