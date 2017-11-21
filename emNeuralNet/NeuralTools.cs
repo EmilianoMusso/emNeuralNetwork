@@ -66,11 +66,8 @@ namespace emNeuralNet
         /// Create a 1600x1200 JPG file, containing a graphical representation of the neural network
         /// </summary>
         /// <returns></returns>
-        public static Image GetImage(this NeuralNetwork nn)
+        public static Image GetImage(this NeuralNetwork nn, int width, int height)
         {
-            int width = 1600;
-            int height = 1200;
-
             int neuronSize = 30;
             int spacingX = 45;
             int spacingY = 120;
@@ -119,9 +116,9 @@ namespace emNeuralNet
         /// Save a 1600x1200 JPG file, containing a graphical representation of the neural network
         /// </summary>
         /// <param name="pathFile">The path in which to save the jpg file</param>
-        public static void SaveImage(this NeuralNetwork nn, string pathFile)
+        public static void SaveImage(this NeuralNetwork nn, string pathFile, int width, int height)
         {
-            nn.GetImage().Save(pathFile);
+            nn.GetImage(width, height).Save(pathFile);
         }
 
         /// <summary>
